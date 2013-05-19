@@ -12,10 +12,14 @@ MCP42xxx::MCP42xxx(int csPin, int shdnPin, int rsPin) {
   this->rsPin = rsPin;
   pinMode(this->csPin, OUTPUT);
   digitalWrite(this->csPin, HIGH);
-  pinMode(this->shdnPin, OUTPUT);
-  digitalWrite(this->shdnPin, HIGH);
-  pinMode(this->rsPin, OUTPUT);
-  digitalWrite(this->rsPin, HIGH);
+  if( this->shdnPin > -1 ) {
+    pinMode(this->shdnPin, OUTPUT);
+    digitalWrite(this->shdnPin, HIGH);
+  }
+  if( this->rsPin > -1 ) {
+    pinMode(this->rsPin, OUTPUT);
+    digitalWrite(this->rsPin, HIGH);
+  }
 }
 
 void MCP42xxx::write(MCP42xxx::Channel channel, byte data) {
