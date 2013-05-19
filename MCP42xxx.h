@@ -6,7 +6,7 @@
 class MCP42xxx
 {
   public:
-  	enum Channel { NONE=0, CHANNEL_0=1, CHANNEL_1=2, BOTH=3 };
+    enum Channel { NONE=0, CHANNEL_0=1, CHANNEL_1=2, BOTH=3 };
 
     MCP42xxx(int csPin, int shdnPin, int rsPin);
     void write(MCP42xxx::Channel channel, byte value);
