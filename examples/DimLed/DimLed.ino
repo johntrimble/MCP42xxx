@@ -1,3 +1,7 @@
+/*
+ * This example based on one from:
+ * http://arduino.cc/en/Tutorial/SPIDigitalPot
+ */
 #include<SPI.h>
 #include<MCP42xxx.h>
 
